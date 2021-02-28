@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 function SpecificCocktailPage() {
   const { strCategory } = useParams();
@@ -29,13 +29,17 @@ function SpecificCocktailPage() {
             flexWrap: "wrap",
             justifyContent: "space-around",
             marginTop: 100,
+            fontSize: 20,
+            color: "blue",
           }}
         >
           {cocktailData.map((drink, index) => {
             return (
               <div key={index}>
-                <h2>{drink.strDrink}</h2>
                 <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+                <Link to={`/details/${drink.idDrink}`}>
+                  <p>{drink.strDrink}</p>
+                </Link>
               </div>
             );
           })}

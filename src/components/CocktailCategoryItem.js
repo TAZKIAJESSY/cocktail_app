@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function CocktailCategoryItem(props) {
   console.log("wHAT ARE PROSP?", props);
   return (
-    <div>
-      <Link to={`/cocktail/${props.strCategory}`}>
+    <div style={{ marginTop: 50 }}>
+      <Link style={{ color: "violet" }} to={`/category/${props.strCategory}`}>
         <h1>{props.strCategory}</h1>
       </Link>
     </div>

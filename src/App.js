@@ -4,15 +4,17 @@ import CocktailCategoryPage from "./pages/CocktailCategoryPage";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
 import SpecificCocktailPage from "./pages/SpecificCocktailPage";
+import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Switch>
+        <Route exact path="/details/:idDrink" component={DetailsPage} />
         <Route
           exact
-          path="/cocktail/:strCategory"
+          path="/category/:strCategory"
           component={SpecificCocktailPage}
         />
         <Route exact path="/cocktail" component={CocktailCategoryPage} />
